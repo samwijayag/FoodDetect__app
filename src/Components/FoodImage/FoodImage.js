@@ -6,7 +6,7 @@ const FoodImage = () => {
 			<div className='center ma'>
 				<div className='absolute mt2'>
 					<img alt=""
-					 src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwArCTOd8GLjeEGDrpanPxMqvZgyCZvjN8RdCwo99g97ojGHgI' 
+					 src='https://samples.clarifai.com/food.jpg' 
 					 width='500px'
 					 height='auto'
 					  />
