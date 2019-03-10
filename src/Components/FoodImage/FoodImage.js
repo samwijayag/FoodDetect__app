@@ -1,12 +1,12 @@
 import React from 'react';
 
-const FoodImage = () => {
+const FoodImage = ({imageUrl}) => {
 	return(
 		<div>
 			<div className='center ma'>
 				<div className='absolute mt2'>
 					<img alt=""
-					 src='https://samples.clarifai.com/food.jpg' 
+					 src={imageUrl} 
 					 width='500px'
 					 height='auto'
 					  />

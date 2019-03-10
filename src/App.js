@@ -21,32 +21,38 @@ class App extends Component {
     }
   }
 
+  
+  onInputChange = (event) => {
+    this.setState({input: event.target.value});
+    console.log(event.target.value)
+  }
+
   onButtonSubmit = () => {
+    this.setState({imageUrl: this.state.input})
     app.models
     .predict(
       Clarifai.FOOD_MODEL, 
-      "https://samples.clarifai.com/food.jpg")
+      this.state.input)
     .then(
       function(response) {
-        console.log(response);
+        console.log(response.outputs[0].data.concepts);
       },
-      function(err) {      }
+      function(err) {    
+
+       }
     );
   }
 
-  onInputChange = (event) => {
-    console.log(event.target.value);
-  }
 
   render() {
     return (
-      <div>
+      <div className='App'>
         <Navigation />
         <ImageUrlForm 
         onInputChange={this.onInputChange}
         onButtonSubmit={this.onButtonSubmit}
         />
-        <FoodImage />
+        <FoodImage imageUrl={this.state.imageUrl}/>
         <FoodIngredients />
       </div>
     );
