@@ -1,6 +1,6 @@
 
 body{
-   background-color: #f2f2f2;
+   background-color: white;
 }
 
 .App{
@@ -10,16 +10,10 @@ body{
 p{
 	text-align: center;
 }
-.center {
-  display: flex;
-  justify-content: center;
-}
 
 nav{
 	display: flex;
 	justify-content: flex-end;
 }
-.form{
-	width: 700px;
-}
+
 

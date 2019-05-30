@@ -1,15 +1,13 @@
-import React, { Component } from 'react';
-import Clarifai from 'clarifai';
+import React, {Component} from 'react';
+import InputForm from './Components/InputForm'
+import OutputForm from './Components/OutputForm'
+import IngredientList from './Components/IngredientList'
 import './App.css';
-import Navigation from './Components/Navigation/Navigation';
-import ImageUrlForm from './Components/ImageUrlForm/ImageUrlForm';
-import FoodIngredients from './Components/FoodIngredients/FoodIngredients';
-import FoodImage from './Components/FoodImage/FoodImage';
+import Clarifai from 'clarifai';
 
 const app = new Clarifai.App({
  apiKey: 'e4c93404d9be4739ae6b173d98ca7a08'
 });
-
 
 
 class App extends Component {
@@ -17,43 +15,40 @@ class App extends Component {
     super();
     this.state = {
       input: '',
-      imageUrl:''
+      imageUrl: '',
+      foodItems: [],
     }
   }
 
-  
+  foodIngredients = (data) => {
+    const clarifaiFood = data.outputs[0].data.concepts
+    this.setState({foodItems: clarifaiFood})
+  }
+
   onInputChange = (event) => {
-    this.setState({input: event.target.value});
-    console.log(event.target.value)
+    this.setState({input: event.target.value})
   }
 
-  onButtonSubmit = () => {
-    this.setState({imageUrl: this.state.input})
-    app.models
-    .predict(
-      Clarifai.FOOD_MODEL, 
-      this.state.input)
-    .then(
-      function(response) {
-        console.log(response.outputs[0].data.concepts);
-      },
-      function(err) {    
-
-       }
-    );
+  onInputSubmit = () => {
+      this.setState({imageUrl: this.state.input})
+      app.models.predict(
+        Clarifai.FOOD_MODEL,
+        this.state.input)
+      .then(response => this.foodIngredients(response))
+      .catch(err => console.log(err))
   }
 
-
-  render() {
+  render(){
     return (
-      <div className='App'>
-        <Navigation />
-        <ImageUrlForm 
+      <div className="App">
+      <InputForm 
         onInputChange={this.onInputChange}
-        onButtonSubmit={this.onButtonSubmit}
+        onInputSubmit={this.onInputSubmit}
         />
-        <FoodImage imageUrl={this.state.imageUrl}/>
-        <FoodIngredients />
+      <OutputForm 
+        imageUrl={this.state.imageUrl}
+        />
+      <IngredientList foodItems = {this.state.foodItems}/>
       </div>
     );
   }
