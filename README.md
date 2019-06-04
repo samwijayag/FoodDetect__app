@@ -1,8 +1,7 @@
-# ***Food Detect***
+
+## [***FOOD DETECT APP***](https://mysterious-sands-38691.herokuapp.com/ "Food Detect App")
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-[Live](https://mysterious-sands-38691.herokuapp.com/)
 
 ## Guide: 
 
