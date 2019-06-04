@@ -22,8 +22,7 @@ This APP is deployed on heroku, url can be found above.
 	* Add security
 	* Tidy up code 
 
-## GIF Guide: 
+#### GIF Guide: 
 
-		<a href="https://imgflip.com/gif/32nzjg"><img src="https://i.imgflip.com/32nzjg.gif" title="made at imgflip.com"/></a>
-
-		<a href="https://imgflip.com/gif/32nzw0"><img src="https://i.imgflip.com/32nzw0.gif" title="made at imgflip.com"/></a>
+<a href="https://imgflip.com/gif/32nzjg"><img src="https://i.imgflip.com/32nzjg.gif" title="made at imgflip.com"/></a>
+<a href="https://imgflip.com/gif/32nzw0"><img src="https://i.imgflip.com/32nzw0.gif" title="made at imgflip.com"/></a>
