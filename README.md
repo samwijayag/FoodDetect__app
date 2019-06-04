@@ -24,11 +24,6 @@ This APP is deployed on heroku, url can be found above.
 
 ## GIF Guide: 
 
-	1. Open App 
-
 		<a href="https://imgflip.com/gif/32nzjg"><img src="https://i.imgflip.com/32nzjg.gif" title="made at imgflip.com"/></a>
-
-
-	2. Input URL
 
 		<a href="https://imgflip.com/gif/32nzw0"><img src="https://i.imgflip.com/32nzw0.gif" title="made at imgflip.com"/></a>
